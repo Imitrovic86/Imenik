@@ -5,14 +5,14 @@ import addNumber from "./addNumber.vue";
 
 export default {
     name: "Body",
-    components:{
-        'add-Name':addName,
-        'add-Number':addNumber,
+    components: {
+        'add-Name': addName,
+        'add-Number': addNumber,
     },
-    props:["tab"],
-    computed:{
+    props: ["tab"],
+    computed: {
         marginLeft() {
-            return "margin-left: "+ -(this.tab -1)*100 + "%";
+            return "margin-left: " + -(this.tab - 1) * 100 + "%";
         }
     }
 }
@@ -24,30 +24,29 @@ export default {
 
         <div id="add-Name" class="name-container" v-bind:style="marginLeft">
             <add-name></add-name>
+        </div>
         <div id="add-Number" class="number-container" v-bind:style="marginLeft">
             <add-number></add-number>
-           
-                
-            </div>
         </div>
     </div>
+    
 
 </template>
 
 <style scoped>
-    #app-body {
+#app-body {
     flex-grow: 1;
-    overflow : hidden;
-    display  : flex;
+    overflow: hidden;
+    display: flex;
 }
 
 .todo-item {
-    padding   : 22px 4px;
-    margin    : 0px 12px;
-    cursor    : pointer;
+    padding: 22px 4px;
+    margin: 0px 12px;
+    cursor: pointer;
     border-top: 1px solid #e8e8e8;
 
-    display    : flex;
+    display: flex;
     align-items: center;
 }
 
@@ -63,19 +62,19 @@ export default {
 
 .todo-item-content {
     flex-grow: 1;
-    color    : #7b7b7b;
-    padding  : 0 16px;
+    color: #7b7b7b;
+    padding: 0 16px;
 }
 
 .todo-item-date {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    text-align    : center;
-    font-weight   : bold;
-    background    : #ecb2c3;
-    padding       : 6px 14px;
-    border-radius : 6px;
-    color         : white;
+    text-align: center;
+    font-weight: bold;
+    background: #ecb2c3;
+    padding: 6px 14px;
+    border-radius: 6px;
+    color: white;
 }
 
 .todo-item-date .day {
@@ -92,12 +91,12 @@ export default {
 
 
 .delete-btn {
-    display            : inline-block;
-    width              : 26px;
-    height             : 26px;
-    background-image   : url(../assets/icon-delete-light.png);
-    background-size    : contain;
-    background-repeat  : no-repeat;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-image: url(../assets/icon-delete-light.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
 
     flex-shrink: 0;
@@ -127,10 +126,10 @@ export default {
 
 
 .items-container {
-    width      : 100%;
+    width: 100%;
     flex-shrink: 0;
 
-    display       : flex;
+    display: flex;
     flex-direction: column;
 
     overflow: auto;
@@ -138,7 +137,7 @@ export default {
 
 .items-container .no-items-message {
     display: none;
-    margin : auto;
+    margin: auto;
 
 }
 
@@ -150,9 +149,8 @@ export default {
 #all-items-container,
 #active-items-container,
 #completed-items-container {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    height        : 100%;
+    height: 100%;
 }
-
 </style>

@@ -18,12 +18,16 @@ export default {
   },
   methods: {
     tabChange(tab) {
-      this.clickedTab = tab
+      this.clickedTab = tab;
     },
-    add(content){
-      alert(content)
+    addHandler(content) {
+      alert("add" + content);
+    },
+    deleteHandler(content) {
+      alert("delete" + content);
     }
   },
+
   computed: {
     activeTab() {
       let tab;
@@ -49,7 +53,7 @@ export default {
   <div id="app-container">
     <app-header v-on:tab-change="tabChange" v-bind="activeTab"></app-header>
     <app-body v-bind:tab="activeTab"></app-body>
-    <app-footer v-on:add="add"></app-footer>
+    <app-footer v-on:add="addHandler" v-on:delete="deleteHandler"></app-footer>
   </div>
 
   <div id="app-container">
